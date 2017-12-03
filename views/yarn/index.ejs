@@ -2,9 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>The Delta Fiber</title>
   </head>
   <body>
-    Index
+    <h1>The Delta Fiber Yarn Index</h1>
+    <% for (let yarn of allYarn) { %>
+      <p><%= yarn.brand %>, <%= yarn.name %></p>
+    <% } %>
   </body>
 </html>

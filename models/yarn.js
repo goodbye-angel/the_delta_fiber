@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // schema for yarn
 const yarnSchema = new mongoose.Schema({
   brand: { type: String, required: true },
-  name: String,
+  name: { type: String, required: true },
   fiber: String,
   color: String,
   weight: String,
