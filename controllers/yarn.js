@@ -13,33 +13,39 @@ router.get('/', async (req, res) => {
   res.render('yarn/index.ejs', { allYarn });
 });
 
-// show
+// new
+router.get('/new', (req, res) => {
+  res.render('yarn/new.ejs');
+});
+
+// create
+router.post('/', async (req, res) => {
+  await Yarn.create(req.body);
+  res.redirect('/yarn');
+});
+
+// read
 router.get('/:id', async (req, res) => {
   const oneYarn = await Yarn.findById(req.params.id);
   res.render('yarn/show.ejs', { oneYarn });
 });
 
-// create
-router.post('/new', async (req, res) => {
-  await Yarn.create(req.body);
-  res.redirect('/yarn');
-});
-
-// create form
-router.get('/new', async (req, res) => {
-  await res.render('yarn/new.ejs');
-});
-
-// edit
+// update
 router.put('/:id', async (req, res) => {
   await Yarn.findByIdAndUpdate(req.params.id, req.body);
   res.redirect('/yarn');
 });
 
-// edit form
+// edit
 router.get('/:id/edit', async (req, res) => {
   const editYarn = await Yarn.findById(req.params.id);
   res.render('yarn/edit.ejs', { editYarn });
+});
+
+// delete
+router.delete('/:id', async (req, res) => {
+  await Yarn.findByIdAndRemove(req.params.id);
+  res.redirect('/yarn');
 });
 
 module.exports = router;
