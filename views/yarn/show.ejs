@@ -2,9 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Show</title>
+    <title><%= oneYarn.brand %>, <%= oneYarn.name %></title>
   </head>
   <body>
-    Show
+    <h3><%= oneYarn.brand %></h3>
+
+    <h3><%= oneYarn.name %></h3>
+
+    <% if (oneYarn.img) { %>
+      <p><img src="<%= oneYarn.img %>"></p>
+    <% } %>
+
+    <% if (oneYarn.fiber) { %>
+      <p>Fiber content: <%= oneYarn.fiber %></p>
+    <% } %>
+
+    <% if (oneYarn.color) { %>
+      <p>Color: <%= oneYarn.color %></p>
+    <% } %>
+
+    <% if (oneYarn.yarn_weight) { %>
+      <p>Yarn weight: <%= oneYarn.yarn_weight %></p>
+    <% } %>
+
+    <% if (oneYarn.skein_weight) { %>
+      <p>Weight of skein: <%= oneYarn.skein_weight %> grams</p>
+    <% } %>
+
+    <% if (oneYarn.length_per_skein) { %>
+      <p>Length: <%= oneYarn.length_per_skein %> yards</p>
+    <% } %>
+
+    <p>Number of skeins: <%= oneYarn.skein_qty %></p>
+
+    <% if (oneYarn.dye_lot) { %>
+      <p>Dye lot: <%= oneYarn.dye_lot %></p>
+    <% } %>
+
+    <% if (oneYarn.notes) { %>
+      <p>Notes: <%= oneYarn.notes %></p>
+    <% } %> 
   </body>
 </html>
