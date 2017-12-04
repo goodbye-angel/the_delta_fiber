@@ -27,6 +27,11 @@ app.use(methodOverride('_method'));
 const YarnController = require('./controllers/yarn.js');
 app.use('/yarn', YarnController);
 
+// root route
+app.get('/', (req, res) => {
+  res.redirect('/yarn');
+});
+
 // listen
 app.listen(PORT, () => {
   console.log('Ready to launch from shuttle bay 2. Listening on subspace frequency', PORT);
