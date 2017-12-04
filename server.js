@@ -5,10 +5,10 @@ require('pretty-error').start();
 const app = express();
 mongoose.Promise = global.Promise;
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // database
-const mongoURI = 'mongodb://localhost:27017/the_delta_fiber'
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/the_delta_fiber'
 mongoose.connect(mongoURI, { useMongoClient: true });
 
 // enable static assets
