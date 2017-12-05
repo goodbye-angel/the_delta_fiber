@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('pretty-error').start();
 const app = express();
+const session = require('express-session');
 mongoose.Promise = global.Promise;
 
 const PORT = process.env.PORT || 3000;
@@ -23,9 +24,22 @@ app.use(express.json());
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
+// enable sessions
+app.use(session({
+  secret: "therearecatsandthecatsarefluffy", //?????
+  resave: false, //?????
+  saveUninitialized: false //?????
+}));
+
 // controllers
 const YarnController = require('./controllers/yarn.js');
 app.use('/yarn', YarnController);
+
+const UsersController = require('./controllers/users.js');
+app.use('/users', UsersController);
+
+const SessionsController = require('./controllers/sessions.js');
+app.use('/sessions', SessionsController);
 
 // root route
 app.get('/', (req, res) => {

@@ -10,7 +10,7 @@ const Yarn = require('../models/yarn.js');
 // index
 router.get('/', async (req, res) => {
   const allYarn = await Yarn.find();
-  res.render('yarn/index.ejs', { allYarn });
+  res.render('yarn/index.ejs', { allYarn, currentUser: req.session.currentuser });
 });
 
 // new
