@@ -2,9 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Edit</title>
+    <title>Edit yarn</title>
   </head>
   <body>
-    Edit
+    <h2>Edit yarn</h2>
+    <form action="/yarn/<%= editYarn._id %>?_method=PUT" method="POST">
+      <p>Brand: <input type="text" name="brand" value="<%= editYarn.brand %>"></p>
+      <p>Name: <input type="text" name="name" value="<%= editYarn.name %>"></p>
+      <p>Fiber: <input type="text" name="fiber" value="<%= editYarn.fiber %>"></p>
+      <p>Color: <input type="text" name="color" value="<%= editYarn.color %>"></p>
+      <p>Yarn weight: <input type="text" name="yarn_weight" value="<%= editYarn.yarn_weight %>"></p>
+      <p>Skein weight in grams: <input type="number" name="skein_weight" value="<%= editYarn.skein_weight %>"></p>
+      <p>Length in yards: <input type="number" name="length_per_skein" value="<%= editYarn.length_per_skein %>"></p>
+      <p>Number of skeins: <input type="number" name="skein_qty" value="<%= editYarn.skein_qty %>"></p>
+      <p>Dye lot: <input type="text" name="dye_lot" value="<%= editYarn.dye_lot %>"></p>
+      <p>Image URL: <input type="text" name="img" value="<%= editYarn.img %>"></p>
+      <p>Notes: <input type="text" name="notes" value="<%= editYarn.notes %>"></p>
+      <p><button type="submit">Submit!</button></p>
+    </form>
+    <p><a href="/yarn"><button>Back to The Delta Fiber</button></a></p>
   </body>
 </html>
