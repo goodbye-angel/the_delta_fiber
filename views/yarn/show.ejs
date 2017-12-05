@@ -45,6 +45,10 @@
 
     <p><a href="/yarn/<%= oneYarn._id %>/edit"><button>Edit yarn</button></a></p>
 
+    <form action="/yarn/<%= oneYarn._id %>?_method=DELETE" method="POST">
+      <button type="submit">Remove/Delete Yarn</button>
+    </form>
+
     <p><a href="/yarn"><button>Back to The Delta Fiber</button></a></p>
   </body>
 </html>

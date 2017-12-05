@@ -7,9 +7,9 @@ const yarnSchema = new mongoose.Schema({
   fiber: String,
   color: String,
   yarn_weight: String,
-  skein_weight: Number,
-  length_per_skein: Number,
-  skein_qty: { type: Number, required: true },
+  skein_weight: { type: Number, min: 1 },
+  length_per_skein: { type: Number, min: 1 },
+  skein_qty: { type: Number, required: true, min: 0 },
   dye_lot: String,
   img: String,
   notes: String
