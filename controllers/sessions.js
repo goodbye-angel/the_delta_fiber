@@ -17,10 +17,10 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
   const foundUser = await User.findOne({ username: req.body.username });
   if(bcrypt.compareSync(req.body.password, foundUser.password)) {
-      req.session.currentuser = foundUser;
-      res.redirect('/');
+    req.session.currentuser = foundUser;
+    res.redirect('/');
   } else {
-      res.send('wrong password');
+    res.send('wrong password');
   }
 });
 

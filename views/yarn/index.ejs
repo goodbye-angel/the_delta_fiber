@@ -5,22 +5,28 @@
     <title>The Delta Fiber</title>
   </head>
   <body>
+    
     <h1>The Delta Fiber</h1>
 
     <% if (currentUser) { %>
+
       Welcome <%=currentUser.username%>!
+
       <form action="/sessions?_method=DELETE" method="POST">
-           <button type="submit">Logout</button>
-       </form>
+        <button type="submit">Logout</button>
+      </form>
+
+      <p><a href="/yarn/new"><button>Add yarn!</button></a></p>
+
+      <% for (let yarn of allYarn) { %>
+        <p><%= yarn.brand %> - <%= yarn.name %></p>
+        <p><a href="/yarn/<%= yarn._id %>">View full yarn info...</a></p>
+      <% } %>
+
     <% } else { %>
+
       <p><a href="/sessions/login">Log in!</a> or <a href="/users/register">Sign up!</a></p>
-    <% } %>
 
-    <p><a href="/yarn/new"><button>Add yarn!</button></a></p>
-
-    <% for (let yarn of allYarn) { %>
-      <p><%= yarn.brand %> - <%= yarn.name %></p>
-      <p><a href="/yarn/<%= yarn._id %>">View full yarn info...</a></p>
     <% } %>
 
   </body>
