@@ -15,12 +15,13 @@ router.get('/', async (req, res) => {
 
 // new
 router.get('/new', (req, res) => {
-  res.render('yarn/new.ejs');
+  res.render('yarn/new.ejs', { currentUser: req.session.currentuser });
 });
 
 // create
 router.post('/', async (req, res) => {
   await Yarn.create(req.body);
+  console.log(req.body);
   res.redirect('/yarn');
 });
 

@@ -5,7 +5,7 @@
     <title>The Delta Fiber</title>
   </head>
   <body>
-    
+
     <h1>The Delta Fiber</h1>
 
     <% if (currentUser) { %>
@@ -19,8 +19,10 @@
       <p><a href="/yarn/new"><button>Add yarn!</button></a></p>
 
       <% for (let yarn of allYarn) { %>
+        <% if (yarn.user == currentUser._id) { %>
         <p><%= yarn.brand %> - <%= yarn.name %></p>
         <p><a href="/yarn/<%= yarn._id %>">View full yarn info...</a></p>
+      <% } %>
       <% } %>
 
     <% } else { %>
