@@ -12,7 +12,8 @@ const yarnSchema = new mongoose.Schema({
   skein_qty: { type: Number, required: true, min: 0 },
   dye_lot: String,
   img: String,
-  notes: String
+  notes: String,
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('Yarn', yarnSchema);

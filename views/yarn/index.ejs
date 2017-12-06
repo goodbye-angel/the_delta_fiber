@@ -9,6 +9,9 @@
 
     <% if (currentUser) { %>
       Welcome <%=currentUser.username%>!
+      <form action="/sessions?_method=DELETE" method="POST">
+           <button type="submit">Logout</button>
+       </form>
     <% } else { %>
       <p><a href="/sessions/login">Log in!</a> or <a href="/users/register">Sign up!</a></p>
     <% } %>

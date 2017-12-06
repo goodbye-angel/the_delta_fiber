@@ -16,12 +16,18 @@ router.get('/login', (req, res) => {
 // create
 router.post('/login', async (req, res) => {
   const foundUser = await User.findOne({ username: req.body.username });
-  if (req.body.password == foundUser.password) {
-    req.session.currentuser = foundUser;
-    res.redirect('/');
+  if(bcrypt.compareSync(req.body.password, foundUser.password)) {
+      req.session.currentuser = foundUser;
+      res.redirect('/');
   } else {
-    res.send('Wrong username or password.'); //replace with view
-  };
+      res.send('wrong password');
+  }
+});
+
+// delete
+router.delete('/', async (req, res) => {
+    await req.session.destroy()
+    res.redirect('/');
 });
 
 module.exports = router;
