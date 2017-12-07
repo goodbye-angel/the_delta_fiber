@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Asul|Stardos+Stencil" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <title>The Delta Fiber</title>
   </head>
   <body>
 
-    <h1>The Delta Fiber</h1>
+    <nav>
 
-    <% if (currentUser) { %>
+      <h1>The Delta Fiber</h1>
 
-      Welcome <%=currentUser.username%>!
+      <% if (currentUser) { %>
 
-      <form action="/sessions?_method=DELETE" method="POST">
-        <button type="submit">Logout</button>
-      </form>
+        Resistance is futile, <%=currentUser.username%>.
 
-      <p><a href="/yarn/new"><button>Add yarn!</button></a></p>
+        <p><a href="/yarn/new">Add yarn!</a></p>
+
+        <form action="/sessions?_method=DELETE" method="POST">
+        <button type="submit" class="nav">Logout</button>
+        </form>
+
+    </nav>
+    <div class="yarn-index">
 
       <% for (let yarn of allYarn) { %>
         <% if (yarn.user == currentUser._id) { %>
-        <p><%= yarn.brand %> - <%= yarn.name %></p>
-        <p><a href="/yarn/<%= yarn._id %>">View full yarn info...</a></p>
+
+          <div class="one-yarn">
+          <p><img src="<%= yarn.img %>" class="small"></p>
+          <p><%= yarn.brand %> - <%= yarn.name %></p>
+          <p><a href="/yarn/<%= yarn._id %>">View full yarn info...</a></p>
+          </div>
+
+
       <% } %>
       <% } %>
 
+    </div>
+    
     <% } else { %>
 
       <p><a href="/sessions/login">Log in!</a> or <a href="/users/register">Sign up!</a></p>
