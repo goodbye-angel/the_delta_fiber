@@ -14,7 +14,12 @@ It is hosted online at https://the-delta-fiber.herokuapp.com/yarn.
 - ability to search by keyword
 - drop down menu for "yarn weight"
 - ability to change how yarn on index is sorted (alphabetically, by brand, weight, etc)
-- more styling
+- user uploads of photos
+- better styling
 
 ### Author
 This application was built with lots of love, caffeine, and yarn by Jaq Dunham as a project for the Web Development Immersive Remote program at General Assembly in December, 2017.
+
+All included photos taken by me.
+
+Star Trek font from http://www.st-minutiae.com/resources/fonts/index.html.

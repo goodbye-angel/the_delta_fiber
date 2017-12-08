@@ -26,9 +26,9 @@ app.use(methodOverride('_method'));
 
 // enable sessions
 app.use(session({
-  secret: "therearecatsandthecatsarefluffy", //?????
-  resave: false, //?????
-  saveUninitialized: false //?????
+  secret: "therearecatsandthecatsarefluffy",
+  resave: false,
+  saveUninitialized: false
 }));
 
 // controllers
