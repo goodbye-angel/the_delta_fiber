@@ -8,11 +8,12 @@
   </head>
   <body>
 
-    <nav>
 
-      <h1>The Delta Fiber</h1>
 
-      <% if (currentUser) { %>
+    <% if (currentUser) { %>
+      <nav>
+
+        <p><img src="/images/logo.png"></p>
 
         Resistance is futile, <%=currentUser.username%>.
 
@@ -22,7 +23,8 @@
         <button type="submit" class="nav">Logout</button>
         </form>
 
-    </nav>
+      </nav>
+
     <div class="yarn-index">
 
       <% for (let yarn of allYarn) { %>
@@ -39,12 +41,25 @@
       <% } %>
 
     </div>
-    
-    <% } else { %>
 
-      <p><a href="/sessions/login">Log in!</a> or <a href="/users/register">Sign up!</a></p>
+    <% } else { %>
+      <nav>
+        <p><img src="/images/logo.png"></p>
+        
+        <p><a href="/sessions/login">Log in!</a> or <a href="/users/register">Sign up!</a></p>
+      </nav>
+
+      <div class="not-logged">
+        <p><img src="/images/rockweed.jpg" class="not-logged-img"></p>
+        <p><img src="/images/yarn1.jpg" class="not-logged-img"></p>
+        <p><img src="/images/speckle.jpg" class="not-logged-img"></p>
+        <p><img src="/images/srhalpacas.jpg" class="not-logged-img"></p>
+        <p><img src="/images/stitch.jpg" class="not-logged-img"></p>
+        <p><img src="/images/yarn2.jpg" class="not-logged-img"></p>
+      </div>
 
     <% } %>
 
   </body>
+
 </html>

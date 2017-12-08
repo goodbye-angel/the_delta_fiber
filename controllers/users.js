@@ -12,7 +12,7 @@ const User = require('../models/users.js');
 router.post('/register', async (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
   await User.create(req.body);
-  res.redirect('/');
+  res.redirect('/sessions/login');
 });
 
 // new
