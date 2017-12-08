@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
     req.session.currentuser = foundUser;
     res.redirect('/');
   } else {
-    res.send('wrong password');
+    res.render('sessions/wrong.ejs');
   }
 });
 
