@@ -6,7 +6,7 @@ It's called The Delta Fiber because I really like Star Trek Voyager. There are a
 
 ## Technologies Used
 
-The Delta Fiber was built using Node.js, Express.js, Mongoose, EJS, HTML, and CSS.
+The Delta Fiber was built using Node.js, Express.js, MongoDB, Mongoose, EJS, HTML, and CSS.
 
 It is hosted online at https://the-delta-fiber.herokuapp.com/yarn.
 
